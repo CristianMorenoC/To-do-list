@@ -2,11 +2,8 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckSquare, faEdit, faSquare, faTimes} from '@fortawesome/free-solid-svg-icons';
 
-const ListaDeTareas = ({copiaDataApi, setCopiaDataApi}) => {
+const ListaDeTareas = ({copiaDataApi, cambiarEstado}) => {
 
-    const cambiarEstado = (id) => {
-        setCopiaDataApi(copiaDataApi.map((tarea)=> tarea.id === id ? {...tarea, completed: !tarea.completed} : tarea ))
-    }
 
     return (
         <div>

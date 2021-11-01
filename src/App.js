@@ -22,13 +22,26 @@ function App() {
     ConsumiendoApi();
   }, []);
 
+  const handleTodos = (string) => {
+    if (string === 'INCOMPLETAS') {
+        setCopiaDataApi(dataApi.filter((tarea)=>(tarea.completed === false)))
+    } else if (string === 'COMPLETAS') {
+        setCopiaDataApi(dataApi.filter((tarea)=>(tarea.completed === true)))
+    } else if (string === 'TODAS'){
+        setCopiaDataApi(dataApi)
+    }
+  }
+
+  const cambiarEstado = (id) => {
+    setCopiaDataApi(copiaDataApi.map((tarea)=> tarea.id === id ? {...tarea, completed: !tarea.completed} : tarea ))
+}
 
 
   return (
     <div className="contenedor">
-      <Header  setCopiaDataApi={setCopiaDataApi} dataApi={dataApi} />
+      <Header  handleTodos={handleTodos} />
       <FormularioTareas dataApi={dataApi} setDataApi={setDataApi} />
-      <ListaDeTareas copiaDataApi={copiaDataApi} setCopiaDataApi={setCopiaDataApi}  />
+      <ListaDeTareas copiaDataApi={copiaDataApi} cambiarEstado={cambiarEstado}  />
     </div>
   );
 }

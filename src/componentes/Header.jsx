@@ -3,17 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faEye, faEyeSlash, faListAlt} from '@fortawesome/free-solid-svg-icons';
 
 
-const Header = ({setCopiaDataApi, dataApi}) => {
+const Header = ({handleTodos}) => {
 
-    const handleTodos = (string) => {
-        if (string === 'INCOMPLETAS') {
-            setCopiaDataApi(dataApi.filter((tarea)=>(tarea.completed === false)))
-        } else if (string === 'COMPLETAS') {
-            setCopiaDataApi(dataApi.filter((tarea)=>(tarea.completed === true)))
-        } else if (string === 'TODAS'){
-            setCopiaDataApi(dataApi)
-        }
-    }
 
     return (
         <header className="header">
