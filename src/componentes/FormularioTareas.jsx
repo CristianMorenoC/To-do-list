@@ -4,7 +4,7 @@ import { faPlusSquare} from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-const FormularioTareas = ({dataApi, setDataApi}) => {
+const FormularioTareas = ({copiaDataApi, setCopiaDataApi}) => {
 
     const [nuevaTarea, setNuevaTarea] = useState('');
 
@@ -14,8 +14,8 @@ const FormularioTareas = ({dataApi, setDataApi}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setDataApi([
-            ...dataApi,
+        setCopiaDataApi([
+            ...copiaDataApi,
             {
                 id: uuidv4(),
                 title: nuevaTarea,

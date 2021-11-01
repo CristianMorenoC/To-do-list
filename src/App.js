@@ -40,7 +40,7 @@ function App() {
   return (
     <div className="contenedor">
       <Header  handleTodos={handleTodos} />
-      <FormularioTareas dataApi={dataApi} setDataApi={setDataApi} />
+      <FormularioTareas copiaDataApi={copiaDataApi} setCopiaDataApi={setCopiaDataApi} />
       <ListaDeTareas copiaDataApi={copiaDataApi} cambiarEstado={cambiarEstado}  />
     </div>
   );
