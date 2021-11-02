@@ -22,6 +22,12 @@ function App() {
     ConsumiendoApi();
   }, []);
 
+  useEffect(()=>{
+    handleTodos('INCOMPLETAS')
+    handleTodos('COMPLETAS')
+    handleTodos('TODAS')
+  }, [dataApi])
+
   const handleTodos = (string) => {
     if (string === 'INCOMPLETAS') {
         setCopiaDataApi(dataApi.filter((tarea)=>(tarea.completed === false)))
@@ -33,7 +39,7 @@ function App() {
   }
 
   const cambiarEstado = (id) => {
-    setCopiaDataApi(copiaDataApi.map((tarea)=> tarea.id === id ? {...tarea, completed: !tarea.completed} : tarea ))
+    setDataApi(copiaDataApi.map((tarea)=> tarea.id === id ? {...tarea, completed: !tarea.completed} : tarea ))
 }
 
 
