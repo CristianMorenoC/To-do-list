@@ -47,7 +47,7 @@ function App() {
     <div className="contenedor">
       <Header  handleTodos={handleTodos} />
       <FormularioTareas copiaDataApi={copiaDataApi} setCopiaDataApi={setCopiaDataApi} />
-      <ListaDeTareas copiaDataApi={copiaDataApi} cambiarEstado={cambiarEstado}  />
+      <ListaDeTareas copiaDataApi={copiaDataApi} cambiarEstado={cambiarEstado} setDataApi={setDataApi} dataApi={dataApi} />
     </div>
   );
 }
