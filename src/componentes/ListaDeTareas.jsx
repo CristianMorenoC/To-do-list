@@ -13,13 +13,12 @@ const ListaDeTareas = ({copiaDataApi, cambiarEstado, setDataApi, dataApi}) => {
     }
 
     const eliminarTarea = (id) => {
-        setDataApi(dataApi.filter((tarea)=>{
-            if (tarea.id !== id) {
-                return tarea;
-            }else{
-                return;
-            }
-        }))
+        setDataApi(dataApi.filter((tarea)=>(tarea.id !== id)))
+        //     if (tarea.id !== id) {
+        //         return tarea;
+        //     }
+        //     return;
+        // ))
     }
 
 
