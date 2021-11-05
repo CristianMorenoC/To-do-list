@@ -23,19 +23,29 @@ function App() {
   }, []);
 
   useEffect(()=>{
-    handleTodos('INCOMPLETAS')
-    handleTodos('COMPLETAS')
-    handleTodos('TODAS')
+    const handleTodosfiltro = (string) => {
+      if (string === 'INCOMPLETAS') {
+          setCopiaDataApi(dataApi.filter((tarea)=>(tarea.completed === false)))
+      } else if (string === 'COMPLETAS') {
+          setCopiaDataApi(dataApi.filter((tarea)=>(tarea.completed === true)))
+      } else if (string === 'TODAS'){
+          setCopiaDataApi(dataApi)
+      }
+    }
+    handleTodosfiltro('INCOMPLETAS')
+    handleTodosfiltro('COMPLETAS')
+    handleTodosfiltro('TODAS')
   }, [dataApi])
+
 
   const handleTodos = (string) => {
     if (string === 'INCOMPLETAS') {
-        setCopiaDataApi(dataApi.filter((tarea)=>(tarea.completed === false)))
-    } else if (string === 'COMPLETAS') {
-        setCopiaDataApi(dataApi.filter((tarea)=>(tarea.completed === true)))
-    } else if (string === 'TODAS'){
-        setCopiaDataApi(dataApi)
-    }
+      setCopiaDataApi(dataApi.filter((tarea)=>(tarea.completed === false)))
+  } else if (string === 'COMPLETAS') {
+      setCopiaDataApi(dataApi.filter((tarea)=>(tarea.completed === true)))
+  } else if (string === 'TODAS'){
+      setCopiaDataApi(dataApi)
+  }
   }
 
   const cambiarEstado = (id) => {

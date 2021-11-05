@@ -87,6 +87,11 @@
   justify-content: space-between;
 }
 
+.lista-elemento-div{
+  width: 70%;
+  display: flex;
+}
+
 .lista-elemento__icono{
   font-size: 1.5rem;
   margin: 0 20px;
@@ -106,3 +111,36 @@
   display: inline-block;
   visibility: visible;
 }
+
+.lista-elemento__form{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.lista-elemento__form-input{
+  width: 60%;
+  border: none;
+  border-bottom: 1px solid grey;
+  background: honeydew;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 400;
+  color: grey;
+}
+
+
+.lista-elemento__form-boton-actualizar{
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 800;
+  background: rgb(182, 56, 56);
+  cursor: pointer;
+}
+
+.lista-elemento__form-boton-actualizar:hover{
+  background: rgb(194, 78, 78);
+}
+
